@@ -67,6 +67,7 @@ gridPlot <- function(x, y, xlim = NULL, ylim = NULL) {
 	grid.points(x, y)
 	grid.xaxis()
 	grid.yaxis()
+	upViewport(0)
 }
 playwith(gridPlot(1:10, 11:20), viewport="theData")
 }}}
