@@ -47,6 +47,10 @@ playwith(wireframe(volcano, drape=TRUE))
 http://playwith.googlecode.com/files/screenshot_1-05_3d.png
 
 == annotation dialog box ==
+This dialog box comes up when the user clicks on the plot to place
+an annotation. Note that you can click _Preview_ to draw the text,
+then change the settings and try again.
+
 http://playwith.googlecode.com/files/screenshot_1-06a_annotation.png
 
 == a minimalist grid plot ==
