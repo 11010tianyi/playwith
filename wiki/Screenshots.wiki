@@ -1,0 +1,26 @@
+#summary What the examples look like.
+
+= example(playwith) =
+
+== time series plot ==
+{{{
+## time series plot
+treering2 <- window(treering, start=1)
+playwith(plot(treering2, xlim=c(0,300)), 
+	time.mode = TRUE,
+	labels = paste(time(treering2), "CE"))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-01_timeseries.png
+
+
+{{{
+## multi-panel lattice plots
+playwith(xyplot(Income ~ log(Population / Area) | state.region, 
+	data = data.frame(state.x77)), 
+	label.style = gpar(col="red", fontfamily="HersheySans",
+	cex=0.7))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-02_panels.png
+
+
+= example(playwith.API) =
