@@ -1,4 +1,5 @@
 #summary What the examples look like.
+#labels Featured
 
 = example(playwith) =
 
@@ -12,9 +13,9 @@ playwith(plot(treering2, xlim=c(0,300)),
 }}}
 http://playwith.googlecode.com/files/screenshot_1-01_timeseries.png
 
-
+== multi-panel lattice plot ==
 {{{
-## multi-panel lattice plots
+## multi-panel lattice plot
 playwith(xyplot(Income ~ log(Population / Area) | state.region, 
 	data = data.frame(state.x77)), 
 	label.style = gpar(col="red", fontfamily="HersheySans",
@@ -22,5 +23,175 @@ playwith(xyplot(Income ~ log(Population / Area) | state.region,
 }}}
 http://playwith.googlecode.com/files/screenshot_1-02_panels.png
 
+== scrollbar controlling a smoothing parameter ==
+{{{
+## scrollbar controlling a smoothing parameter
+xx <- rnorm(50)
+playwith(plot(density(xx, bw = cur.time), panel.last = rug(xx)),
+	time.vector = seq(0.1, 1, by=0.05))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-03_scrollbar.png
+
+== brushing a multivariate scatterplot ==
+{{{
+## brushing a multivariate scatterplot
+playwith(splom(environmental))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-04_brushing.png
+
+== simple spin and zoom for a 3D plot ==
+{{{
+## simple spin and zoom for a 3D plot
+playwith(wireframe(volcano, drape=TRUE))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-05_3d.png
+
+== a minimalist grid plot ==
+{{{
+## a minimalist grid plot
+gridPlot <- function(x, y, xlim = NULL, ylim = NULL) {
+	if (is.null(xlim)) xlim <- extendrange(x)
+	if (is.null(ylim)) ylim <- extendrange(y)
+	grid.newpage()
+	pushViewport(plotViewport())
+	grid.rect()
+	pushViewport(viewport(xscale=xlim, yscale=ylim,
+		name="theData"))
+	grid.points(x, y)
+	grid.xaxis()
+	grid.yaxis()
+}
+playwith(gridPlot(1:10, 11:20), viewport="theData")
+}}}
+http://playwith.googlecode.com/files/screenshot_1-06_grid.png
+
+== acting like a dialog box (confirm close) ==
+{{{
+## acting like a dialog box (confirm close)
+subTools <- list("identify", "clear", "zoom", "zoomout", "zoomfit")
+confirmClose <- function(playState) {
+	if (gWidgets::gconfirm("Close window and report IDs?")) {
+		cat("Indices of identified data points:\n")
+		print(rbind(playState$ids)$which)
+		all.ids <- do.call(rbind, playState$ids)$which
+		print(all.ids)
+		return(FALSE)
+	} else TRUE # don't close
+}
+xy <- list(x=rnorm(20), y=rnorm(20))
+playwith(plot(xy), on.close=confirmClose, modal=TRUE, 
+	win.size=c(360, 360), show.call=FALSE, 
+	top=NULL, left=subTools)
+}}}
+http://playwith.googlecode.com/files/screenshot_1-07_onclose.png
 
 = example(playwith.API) =
+
+== A toggle button to draw "Hello world" text. ==
+{{{
+## 1. A toggle button to draw "Hello world" text.
+
+## constructor function
+helloTool <- function(playState) {
+	quickTool(playState,
+		label = "Greeting",
+		icon = "gtk-yes", 
+		tooltip = "Draw 'Hello world' text",
+		f = hello_handler,
+		post.plot.action = hello_postplot_action,
+		isToggle = TRUE)
+}
+
+## this is called when the button is clicked
+hello_handler <- function(widget, playState) {
+	## need to re-draw plot to remove label
+	if (!widget["active"]) playReplot(playState)
+	else hello_postplot_action(widget, playState)
+}
+
+## this is called after the plot is drawn (or re-drawn)
+hello_postplot_action <- function(widget, playState) {
+	## do nothing if the toggle button is off
+	if (!widget["active"]) return()
+	## draw text centered on the page
+	grid.text("Hello world", gp=gpar(cex=2))
+}
+
+## add new button to a plot window (the bottom toolbar)
+playwith(plot(1:10), bottom=list(helloTool))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-08_helloworld.png
+
+== Select subset of data and show marginal histograms. ==
+{{{
+## 2. Select subset of data and show marginal histograms.
+##    It stores state info in the local environment.
+
+## constructor function
+subsetTool <- function(playState) {
+	playState$subsetTool <- list()
+	quickTool(playState,
+		label = "Data subset",
+		icon = "gtk-justify-fill", 
+		tooltip = "Select a subset of data points for stats",
+		f = subset_handler,
+		post.plot.action = subset_postplot_action)
+}
+
+## this is called when the button is clicked
+subset_handler <- function(widget, playState) {
+	foo <- playSelectData(playState)
+	if (is.null(foo)) return()
+	nSubsets <- length(playState$subsetTool)
+	playState$subsetTool[[nSubsets+1]] <- foo
+	drawSubsetBox(playState, foo)
+}
+
+## draw one subset box with marginal histograms
+drawSubsetBox <- function(playState, foo) {
+	xy <- xyCoords(playState, space=foo$space)
+	playDo(playState, with(foo, {
+		xc <- mean(coords$x)
+		yc <- mean(coords$y)
+		wd <- abs(diff(coords$x))
+		ht <- abs(diff(coords$y))
+		pushViewport(viewport(default.units="native",
+			x=xc, y=yc, width=wd, height=ht,
+			xscale=range(coords$x), yscale=range(coords$y),
+			gp=gpar(alpha=0.3), clip="off"))
+		grid.rect(gp=gpar(fill="yellow"))
+		## draw sample size text
+		grid.text(paste("n=", length(x), sep=""), 
+			x=unit(0.98, "npc"), y=unit(0.98, "npc"),
+			just=c("right", "top"), gp=gpar(cex=1.5))
+		## histogram of x values, outside x-axis
+		h <- hist(x, plot=FALSE)
+		hval <- unit(4 * h$counts / length(x), "cm")
+		grid.rect(x=h$breaks[-1], y=unit(0, "npc"), 
+			height=hval, width=diff(h$breaks), 
+			just=c("right", "top"), default.units="native",
+			gp=gpar(fill="purple"))
+		## histogram of y values, outside y-axis
+		h <- hist(y, plot=FALSE)
+		hval <- unit(4 * h$counts / length(x), "cm")
+		grid.rect(y=h$breaks[-1], x=unit(0, "npc"), 
+			height=diff(h$breaks), width=hval, 
+			just=c("right", "top"), default.units="native",
+			gp=gpar(fill="purple"))
+		popViewport()
+	}), space=foo$space)
+}
+
+## this is called after the plot is drawn (or re-drawn)
+subset_postplot_action <- function(widget, playState) {
+	for (foo in playState$subsetTool)
+		drawSubsetBox(playState, foo)
+}
+
+## add new button to a plot window (the bottom toolbar)
+playwith(xyplot(temperature ~ radiation, environmental),
+	bottom=list(subsetTool))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-09_subset.png
+
+
