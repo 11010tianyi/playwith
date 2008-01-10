@@ -1,9 +1,9 @@
 #summary What the examples of new tools look like.
 #labels Featured
 
-= Examples from `help(playwith.API)`
+= Examples from `help(playwith.API)` =
 
-== A toggle button to draw "Hello world" text. ==
+== 1. A toggle button to draw "Hello world" text. ==
 {{{
 ## 1. A toggle button to draw "Hello world" text.
 
@@ -38,7 +38,7 @@ playwith(plot(1:10), bottom=list(helloTool))
 }}}
 http://playwith.googlecode.com/files/screenshot_1-08_helloworld.png
 
-== Select subset of data and show marginal histograms. ==
+== 2. Select subset of data and show marginal histograms. ==
 {{{
 ## 2. Select subset of data and show marginal histograms.
 ##    It stores state info in the local environment.
@@ -111,7 +111,7 @@ playwith(xyplot(temperature ~ radiation, environmental),
 http://playwith.googlecode.com/files/screenshot_1-09_subset.png
 
 
-== A button to interactively add or remove data points. ==
+== 3. A button to interactively add or remove data points. ==
 {{{
 ## 3. A button to interactively add or remove data points.
 
@@ -157,7 +157,7 @@ playwith(xyplot(ydata ~ 1:10, type=c("p", "smooth"), pch=8),
 }}}
 http://playwith.googlecode.com/files/screenshot_1-10_addpoints.png
 
-== A "spinbutton" to group the data into _n_ clusters. ==
+== 4. A "spinbutton" to group the data into _n_ clusters. ==
 {{{
 ## 4. A more complex toolbar item: a "spinbutton" to 
 ##    group the data into `n` clusters (in plot or xyplot).
