@@ -5,7 +5,7 @@
 
 == time series plot ==
 {{{
-## time series plot
+## time series plot (base graphics)
 treering2 <- window(treering, start=1)
 playwith(plot(treering2, xlim=c(0,300)), 
 	time.mode = TRUE,
@@ -52,6 +52,14 @@ an annotation. Note that you can click _Preview_ to draw the text,
 then change the settings and try again.
 
 http://playwith.googlecode.com/files/screenshot_1-06a_annotation.png
+
+== a simple ggplot ==
+{{{
+## a simple ggplot (nothing more than qplot works)
+library(ggplot2)
+playwith(qplot(1:10, 11:20))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-055_ggplot.png
 
 == a minimalist grid plot ==
 {{{
