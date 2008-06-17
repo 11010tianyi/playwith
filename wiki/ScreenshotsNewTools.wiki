@@ -142,11 +142,11 @@ addTool <- function(playState) {
 			if (playState$is.lattice) {
 				## lattice plot: use `data` argument
 				callArg(playState, 1) <- quote(y ~ x)
-				callArg(playState, data) <- quote(localxy)
+				callArg(playState, "data") <- quote(localxy)
 			} else {
 				## otherwise set first argument to plot
 				callArg(playState, 1) <- quote(localxy)
-				callArg(playState, y) <- NULL
+				callArg(playState, "y") <- NULL
 			}
 			playReplot(playState)
 		})
@@ -189,11 +189,11 @@ cluster_handler <- function(widget, playState) {
 	## avoid a big vector inline in the call, store in local env
 	if (playState$is.lattice) {
 		playState$env$auto.groups <- groups
-		callArg(playState, groups) <- quote(auto.groups)
+		callArg(playState, "groups") <- quote(auto.groups)
 	} else {
 		playState$env$auto.groups <- unclass(groups)
-		callArg(playState, col) <- quote(auto.groups)
-		if (is.null(groups)) callArg(playState, col) <- NULL
+		callArg(playState, "col") <- quote(auto.groups)
+		if (is.null(groups)) callArg(playState, "col") <- NULL
 	}
 	playReplot(playState)
 }
