@@ -45,13 +45,6 @@ playwith(stripplot(yield ~ site, data = barley,
 }}}
 http://playwith.googlecode.com/files/screenshot_2-02_parameters.png
 
-== brushing a multivariate scatterplot ==
-{{{
-## brushing a multivariate scatterplot
-playwith(splom(environmental))
-}}}
-http://playwith.googlecode.com/files/screenshot_1-04_brushing.png
-
 == simple spin and zoom for a 3D plot ==
 {{{
 ## simple spin and zoom for a 3D plot
@@ -74,6 +67,13 @@ library(ggplot2)
 playwith(qplot(qsec, wt, data=mtcars) + stat_smooth())
 }}}
 http://playwith.googlecode.com/files/screenshot_2-03_ggplot.png
+
+== brushing a multivariate scatterplot ==
+{{{
+## brushing a multivariate scatterplot
+playwith(splom(environmental))
+}}}
+http://playwith.googlecode.com/files/screenshot_1-04_brushing.png
 
 == a minimalist grid plot ==
 {{{
