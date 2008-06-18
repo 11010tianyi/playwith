@@ -8,7 +8,6 @@
 ## time series plot (base graphics)
 treering2 <- window(treering, start=1)
 playwith(plot(treering2, xlim=c(0,300)), 
-	time.mode = TRUE,
 	labels = paste(time(treering2), "CE"))
 }}}
 http://playwith.googlecode.com/files/screenshot_1-01_timeseries.png
@@ -17,20 +16,34 @@ http://playwith.googlecode.com/files/screenshot_1-01_timeseries.png
 {{{
 ## multi-panel lattice plot
 playwith(xyplot(Income ~ log(Population / Area) | state.region, 
-	data = data.frame(state.x77)), 
+	data = data.frame(state.x77), subscripts=TRUE), 
 	label.style = gpar(col="red", fontfamily="HersheySans",
 	cex=0.7))
 }}}
 http://playwith.googlecode.com/files/screenshot_1-02_panels.png
 
-== scrollbar controlling a smoothing parameter ==
+== interactive control of a parameter with a slider ==
 {{{
-## scrollbar controlling a smoothing parameter
+## interactive control of a parameter with a slider
 xx <- rnorm(50)
-playwith(plot(density(xx, bw = cur.time), panel.last = rug(xx)),
-	time.vector = seq(0.1, 1, by=0.05))
+playwith(plot(density(xx, bw = bandwidth), panel.last = rug(xx)),
+	parameters = list(bandwidth = seq(0.05, 1, by=0.01)))
 }}}
-http://playwith.googlecode.com/files/screenshot_1-03_scrollbar.png
+http://playwith.googlecode.com/files/screenshot_2-01_slider.png
+
+== more parameters ==
+{{{
+## more parameters
+playwith(stripplot(yield ~ site, data = barley,
+    jitter=TRUE, type=c("p","a"),
+    aspect=aspect, groups=barley[[groups]],
+    scales=list(abbreviate=abbrev),
+    par.settings=list(plot.line=list(col=linecol))),
+  parameters = list(abbrev=FALSE, aspect=0.5,
+                    groups=c("none", "year", "variety"),
+                    linecol="red"))
+}}}
+http://playwith.googlecode.com/files/screenshot_2-02_parameters.png
 
 == brushing a multivariate scatterplot ==
 {{{
@@ -53,13 +66,14 @@ then change the settings and try again.
 
 http://playwith.googlecode.com/files/screenshot_1-06a_annotation.png
 
-== a simple ggplot ==
+== ggplot ==
 {{{
-## a simple ggplot (nothing more than qplot works)
+## ggplot (NOTE: only qplot()-based calls will work)
+## labels come from data frame automatically
 library(ggplot2)
-playwith(qplot(1:10, 11:20))
+playwith(qplot(qsec, wt, data=mtcars) + stat_smooth())
 }}}
-http://playwith.googlecode.com/files/screenshot_1-055_ggplot.png
+http://playwith.googlecode.com/files/screenshot_2-03_ggplot.png
 
 == a minimalist grid plot ==
 {{{
