@@ -3,7 +3,7 @@
 
 = Examples from `help(playwith)` =
 
-== time series plot ==
+== time series plot (base graphics) ==
 {{{
 ## time series plot (base graphics)
 tt <- time(treering)
@@ -12,7 +12,17 @@ treeyears <- paste(abs(tt) + (tt <= 0),
 playwith(plot(treering, xlim = c(1000, 1300)),
 	labels = treeyears)
 }}}
-http://playwith.googlecode.com/files/screenshot_1-01_timeseries.png
+http://playwith.googlecode.com/files/screenshot_3-01_timeseries.png
+
+== time series plot (lattice) ==
+{{{
+## time series plot (lattice)
+## date-time range can be entered directly in time mode
+library(zoo)
+playwith(xyplot(sunspots ~ yearmon(time(sunspots)),
+                xlim=c(1900, 1930), type="l"))
+}}}
+http://playwith.googlecode.com/files/screenshot_3-02_sunspots.png
 
 == multi-panel lattice plot ==
 {{{
@@ -32,6 +42,16 @@ playwith(plot(density(xx, bw = bandwidth), panel.last = rug(xx)),
 	parameters = list(bandwidth = seq(0.05, 1, by=0.01)))
 }}}
 http://playwith.googlecode.com/files/screenshot_2-01_slider.png
+
+== interactive control of a parameter with a spinbutton ==
+{{{
+## the same with a spinbutton (use I() to force spinbutton).
+## initial value is set as the first in the vector of values.
+xx <- rnorm(50)
+playwith(plot(density(xx, bw = bandwidth), panel.last = rug(xx)),
+	parameters = list(bandwidth = I(c(0.1, 5:100/100))) )
+}}}
+http://playwith.googlecode.com/files/screenshot_3-03_spinbutton.png
 
 == more parameters ==
 {{{
