@@ -125,11 +125,9 @@ subTools <- list("identify", "clear", "zoom", "zoomout", "zoomfit")
 confirmClose <- function(playState) {
 	if (gWidgets::gconfirm("Close window and report IDs?")) {
 		cat("Indices of identified data points:\n")
-		print(rbind(playState$ids)$which)
-		all.ids <- do.call(rbind, playState$ids)$which
-		print(all.ids)
+		print(playGetIDs(playState))
 		return(FALSE)
-	} else TRUE # don't close
+	} else TRUE ## don't close
 }
 xy <- list(x=rnorm(20), y=rnorm(20))
 playwith(plot(xy), on.close=confirmClose, modal=TRUE, 
