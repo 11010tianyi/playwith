@@ -6,6 +6,7 @@
 == time series plot (base graphics) ==
 {{{
 ## time series plot (base graphics)
+## click and drag to zoom; right-click to zoomout
 tt <- time(treering)
 treeyears <- paste(abs(tt) + (tt <= 0),
                   ifelse(tt > 0, "CE", "BCE"))
