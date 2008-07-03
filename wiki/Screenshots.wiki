@@ -28,6 +28,7 @@ http://playwith.googlecode.com/files/screenshot_3-02_sunspots.png
 == multi-panel lattice plot ==
 {{{
 ## multi-panel lattice plot
+## note label style can also be set with playwith.options()
 playwith(xyplot(Income ~ log(Population / Area) | state.region, 
 	data = data.frame(state.x77), subscripts=TRUE), 
 	label.style = gpar(col="red", fontfamily="HersheySans",
