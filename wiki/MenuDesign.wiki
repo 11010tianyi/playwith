@@ -1,6 +1,7 @@
 #summary Menu design
 
 ==File==
+  * (latticist) Open data file (?)
   * Keep plot open
   * Save plot code
   * Save plot code and data
@@ -8,10 +9,11 @@
   * Save with options... (size etc)
   * Copy as PNG
   * Copy as WMF (windows)
-  * Print... (prompt to change lattice theme?)
+  * Print...
   * Close device
 
 ==View==
+  * Stay on top
   * Toolbars
   * Status bar
   * In-/De-crease text size (?)
@@ -21,34 +23,37 @@
   * Standard
   * Greyscale
   * etc
-  * New Theme...
+  * New Theme... (TODO)
 
 ==Labels==
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
+  * Identify all points in region...
+  * Find points with label...
+  * Select points from table...
+  * Set labels to --> (columns of "data" object)
+  * Set label style...
 
-==Labels==
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
+==Data==
+  * Summarise data object --> ()
+  * Edit data object --> ()
+  * Save data object --> ()
+  * Purge object cache
 
-==Labels==
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
-  * 
+==Options==
+  * Time mode
+  * Show tooltips (run GtkMain)
+  * Clip annotations
+  * Place on plot (relative)
+  * Place on page (absolute)
+  * Configure toolbar...
+  * Toolbar style -->
+
+
+==Help==
+  * (insert vignette here)
+  * help(playwith)
+  * help(playwith.options)
+  * help(autoplay)
+  * playwith webpage
+
+==Tools==
+  * (custom tool items?)
