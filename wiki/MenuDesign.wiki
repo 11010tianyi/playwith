@@ -1,0 +1,54 @@
+#summary Menu design
+
+==File==
+  * Keep plot open
+  * Save plot code
+  * Save plot code and data
+  * Save as --> PDF / PNG / etc
+  * Save with options... (size etc)
+  * Copy as PNG
+  * Copy as WMF (windows)
+  * Print... (prompt to change lattice theme?)
+  * Close device
+
+==View==
+  * Toolbars
+  * Status bar
+  * In-/De-crease text size (?)
+  * Plot source
+
+==Theme==
+  * Standard
+  * Greyscale
+  * etc
+  * New Theme...
+
+==Labels==
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+
+==Labels==
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+
+==Labels==
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
+  * 
