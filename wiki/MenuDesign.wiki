@@ -1,15 +1,16 @@
 #summary Menu design
 
 ==File==
+  * Clone (new window)
   * (latticist) Open data file (?)
   * Keep plot open
-  * Save plot code
-  * Save plot code and data
   * Save as --> PDF / PNG / etc
   * Save with options... (size etc)
   * Copy as PNG
   * Copy as WMF (windows)
   * Print...
+  * Save plot code
+  * Save plot code and data
   * Close device
 
 ==View==
@@ -26,9 +27,10 @@
   * New Theme... (TODO)
 
 ==Labels==
-  * Identify all points in region...
+  * Identify all points in a region...
   * Find points with label...
   * Select points from table...
+  * Save current IDs to object...
   * Set labels to --> (columns of "data" object)
   * Set label style...
 
@@ -39,14 +41,14 @@
   * Purge object cache
 
 ==Options==
+_need this menu?_
   * Time mode
   * Show tooltips (run GtkMain)
   * Clip annotations
   * Place on plot (relative)
   * Place on page (absolute)
   * Configure toolbar...
-  * Toolbar style -->
-
+  * Toolbar style --> ()
 
 ==Help==
   * (insert vignette here)
@@ -54,6 +56,7 @@
   * help(playwith.options)
   * help(autoplay)
   * playwith webpage
+    (for bugs, contact etc)
 
 ==Tools==
   * (custom tool items?)
