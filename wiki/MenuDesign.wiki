@@ -15,9 +15,12 @@
 
 ==View==
   * Stay on top
+  * Redraw
+  * Reload and redraw
+  * Set device size...
+  * In-/De-crease font size (?)
   * Toolbars
   * Status bar
-  * In-/De-crease text size (?)
   * Plot source
 
 ==Theme==
