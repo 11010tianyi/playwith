@@ -1,0 +1,25 @@
+#summary The built-in feature set.
+
+= Executive Summary =
+
+*playwith* tries to work out the structure of a plot, in order to interact with it. The built-in features include: navigating the data space, identifying and brushing data points, editing and annotating the plot, and saving to a file. Interactive controls for parameters (sliders, spinbuttons, combo-boxes, etc) can be generated automatically. New tools can be defined.
+
+= Introduction =
+
+
+= Actions, Menus and Toolbars =
+
+
+= Default click actions =
+
+
+= Built-in Tools =
+
+_screenshot of plot settings dialog_
+
+_screenshot of annotation dialog_
+
+_screenshot of style settings gui_
+
+
+= API =
