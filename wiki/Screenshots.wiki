@@ -69,5 +69,22 @@ playwith(xyplot(lat ~ long | Depth, data = quakes,
 }}}
    http://playwith.googlecode.com/files/examplePanels_02.png   http://playwith.googlecode.com/files/examplePanelsExpand_01.png
 
+== Spin and brush for a 3D Lattice plot ==
+{{{
+## Spin and zoom for a 3D Lattice plot.
+## Drag on the plot to rotate in 3D (can be confusing).
+## Brushing is linked to the previous xyplot (if still open).
+## Note, brushing 'cloud' requires a recent version of Lattice.
+playwith(cloud(-depth ~ long * lat, quakes, zlab = "altitude"),
+   new = TRUE, link.to = playDevCur(), click.mode = "Brush")
+}}}
+   http://playwith.googlecode.com/files/example3DLink_01.png
+
+{{{
+## Set brushed points according to a logical condition.
+playSetIDs(value = which(quakes$mag >= 6))
+}}}
+   http://playwith.googlecode.com/files/example3DLinkSetIDs_01.png
+
 
 = see also Features =
