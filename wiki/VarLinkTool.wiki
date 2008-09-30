@@ -64,7 +64,9 @@ playwith(xyplot(temperature ~ wind, data = environmental),
          tools = list(varLinkTool), click.mode = "Brush")
 }}}
 
-The tool appears in the bottom toolbar (as well as in the Tools menu). First, brush all data points with wind above 15 miles per hour:
+The tool appears in the bottom toolbar (as well as in the Tools menu). 
+
+First, brush all data points with wind above 15 miles per hour:
 
 http://playwith.googlecode.com/files/demoVarLinkToolA_01.png
 
