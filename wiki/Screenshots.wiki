@@ -17,11 +17,9 @@ playwith(xyplot(Income ~ log(Population / Area),
 }}}
 http://playwith.googlecode.com/files/exampleXY_01.png
 
-Right-clicking on a point brings up a context menu with the values of covariates:
-http://playwith.googlecode.com/files/exampleContext_01.png
+Right-clicking on a point brings up a context menu with the values of covariates; however, if you right-click elsewhere on the plot, a general menu comes up:
 
-If you right-click elsewhere on the plot, a general menu comes up:
-http://playwith.googlecode.com/files/menuContext_01.png
+http://playwith.googlecode.com/files/exampleContext_01.png http://playwith.googlecode.com/files/menuContext_01.png
 
 == Scatterplot (base graphics) ==
 {{{
