@@ -45,3 +45,11 @@ ydata <- c(1:4, 2:1, 5:8)
 playwith(xyplot(ydata ~ 1:10, type=c("p", "smooth"), pch=8),
 	tools = list(pointsTool))
 }}}
+
+http://playwith.googlecode.com/files/demoPointsToolA_01.png
+
+http://playwith.googlecode.com/files/demoPointsToolB_01.png
+
+http://playwith.googlecode.com/files/demoPointsToolC_01.png
+
+http://playwith.googlecode.com/files/demoPointsToolD_01.png
