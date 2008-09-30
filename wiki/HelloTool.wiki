@@ -1,6 +1,6 @@
 #summary A simple "Hello world" tool for playwith().
 
-= The playwith demo `demo("helloTool")` =
+= From `demo("helloTool")` =
 
 == "Hello world" ==
 {{{
