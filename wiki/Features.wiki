@@ -1,10 +1,8 @@
 #summary The built-in feature set.
 
-= Executive Summary =
+= Introduction =
 
 *playwith* tries to work out the structure of a plot, in order to interact with it. The built-in features include: navigating the data space, identifying and brushing data points, editing and annotating the plot, and saving to a file. Interactive controls for parameters (sliders, spinbuttons, combo-boxes, etc) can be generated automatically. New tools can be defined.
-
-= Introduction =
 
 
 = Actions, Menus and Toolbars =
@@ -13,6 +11,8 @@ http://playwith.googlecode.com/files/menuFile_01.png http://playwith.googlecode.
 
 
 = Default click actions =
+
+Right-click popup menu:
 
 http://playwith.googlecode.com/files/menuContext_01.png
 
@@ -27,3 +27,5 @@ _screenshot of style settings gui_
 
 
 = API =
+
+...
