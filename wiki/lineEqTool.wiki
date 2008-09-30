@@ -1,6 +1,6 @@
 #summary Draw a line and place its equation on the plot.
 
-= From `demo("lineEqTool")`
+= From `demo("lineEqTool")` =
 
 {{{
 ## A tool to draw a line and label it with its equation.
