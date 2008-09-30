@@ -66,7 +66,7 @@ First, brush all data points with wind above 15 miles per hour:
 
 http://playwith.googlecode.com/files/demoVarLinkToolA_01.png
 
-Now activate the *VarLink* and choose the "ozone" variable, leaving the other blank:
+Now activate the *varLinkTool* and choose the "ozone" variable, leaving the other blank:
 
 http://playwith.googlecode.com/files/demoVarLinkToolB_01.png
 
