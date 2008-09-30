@@ -204,10 +204,9 @@ doLocalStuff <- function(...) {
 }
 doLocalStuff(title = "locals only") ## eval.args = NA is default
 ## List objects that have been copied and stored:
-sapply(playDevCur()$env, object.size)
+ls(playDevCur()$env)
 }}}
-  * ` doRays   color y_local`
-  * `    992    3528     824`
+  * `[1] "color"   "doRays"  "y_local"`
 
 {{{
 ## i.e. if you rm(x_global) now, redraws will fail.
@@ -215,8 +214,7 @@ sapply(playDevCur()$env, object.size)
 doLocalStuff(title = "all stored", eval.args = TRUE, new = TRUE)
 sapply(playDevCur()$env, object.size)
 }}}
-  * `  doRays    color  y_local x_global`
-  * `     992     3560      824      824`
+  * `[1] "color"    "doRays"   "x_global" "y_local"`
 
 {{{
 ## Now there are two devices open:
