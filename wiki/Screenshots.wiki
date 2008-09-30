@@ -169,7 +169,6 @@ playwith(myGridPlot(1:10, 11:20, pch = 17), viewport = "theData")
 {{{
 ## Presenting the window as a modal dialog box.
 ## When the window is closed, ask user to confirm.
-## Use only a subset of the default tools, and hide plot call.
 confirmClose <- function(playState) {
 	if (gconfirm("Close window and report IDs?",
                      parent = playState$win)) {
@@ -207,8 +206,8 @@ doLocalStuff(title = "locals only") ## eval.args = NA is default
 ## List objects that have been copied and stored:
 sapply(playDevCur()$env, object.size)
 }}}
-|| doRays || color || y_local ||
-||    992 ||  3432 ||     824 ||
+  * ` doRays   color y_local`
+  * `    992    3528     824`
 
 {{{
 ## i.e. if you rm(x_global) now, redraws will fail.
@@ -216,14 +215,13 @@ sapply(playDevCur()$env, object.size)
 doLocalStuff(title = "all stored", eval.args = TRUE, new = TRUE)
 sapply(playDevCur()$env, object.size)
 }}}
-|| doRays  || color || y_local || x_global ||
-||    992  || 3496  ||  824     || 824 ||
+  * `  doRays    color  y_local x_global`
+  * `     992     3560      824      824`
 
 {{{
 ## Now there are two devices open:
 str(playDevList())
 }}}
-
   * `List of 2`
   * ` $ all stored :Classes 'playState', 'environment' length 42 <environment>`
   * ` $ locals only:Classes 'playState', 'environment' length 42 <environment>`
