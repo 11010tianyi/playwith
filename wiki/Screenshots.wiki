@@ -3,139 +3,37 @@
 
 = Examples from `help(playwith)` =
 
-== time series plot (base graphics) ==
+== Scatterplot (Lattice graphics) ==
 {{{
-## time series plot (base graphics)
-## click and drag to zoom; right-click to zoomout
-tt <- time(treering)
-treeyears <- paste(abs(tt) + (tt <= 0),
-                  ifelse(tt > 0, "CE", "BCE"))
-playwith(plot(treering, xlim = c(1000, 1300)),
-	labels = treeyears)
+## Scatterplot (Lattice graphics).
+## Labels are taken from rownames of data.
+## Right-click on the plot to identify points,
+## or switch to Identify mode and left-click.
+playwith(xyplot(Income ~ log(Population / Area),
+   data = data.frame(state.x77), groups = state.region,
+   type = c("p", "smooth"), span = 1, auto.key = TRUE,
+   xlab = "Population density, 1974 (log scale)",
+   ylab = "Income per capita, 1974"))
 }}}
-http://playwith.googlecode.com/files/screenshot_3-01_timeseries.png
+http://playwith.googlecode.com/files/exampleXY_01.png
 
-== time series plot (lattice) ==
+Right-clicking on a point brings up a context menu with the values of covariates:
+http://playwith.googlecode.com/files/exampleXYContext_01.png
+
+If you right-click elsewhere on the plot, a general menu comes up:
+http://playwith.googlecode.com/files/menuContext_01.png
+
+== Scatterplot (base graphics) ==
 {{{
-## time series plot (lattice)
-## date-time range can be entered directly in time mode
-library(zoo)
-playwith(xyplot(sunspots ~ yearmon(time(sunspots)),
-                xlim=c(1900, 1930), type="l"))
+## Scatterplot (base graphics); similar.
+urbAss <- USArrests[,c("UrbanPop", "Assault")]
+playwith(plot(urbAss, panel.first = lines(lowess(urbAss)),
+   col = "blue", main = "Assault vs urbanisation",
+   xlab = "Percent urban population, 1973",
+   ylab = "Assault arrests per 100k, 1973"))
 }}}
-http://playwith.googlecode.com/files/screenshot_3-02_sunspots.png
-
-== multi-panel lattice plot ==
-{{{
-## multi-panel lattice plot
-## note label style can also be set with playwith.options()
-playwith(xyplot(Income ~ log(Population / Area) | state.region, 
-	data = data.frame(state.x77), subscripts=TRUE), 
-	label.style = gpar(col="red", fontfamily="HersheySans",
-	cex=0.7))
-}}}
-http://playwith.googlecode.com/files/screenshot_1-02_panels.png
-
-== interactive control of a parameter with a slider ==
-{{{
-## interactive control of a parameter with a slider
-xx <- rnorm(50)
-playwith(plot(density(xx, bw = bandwidth), panel.last = rug(xx)),
-	parameters = list(bandwidth = seq(0.05, 1, by=0.01)))
-}}}
-http://playwith.googlecode.com/files/screenshot_2-01_slider.png
-
-== interactive control of a parameter with a spinbutton ==
-{{{
-## the same with a spinbutton (use I() to force spinbutton).
-## initial value is set as the first in the vector of values.
-xx <- rnorm(50)
-playwith(plot(density(xx, bw = bandwidth), panel.last = rug(xx)),
-	parameters = list(bandwidth = I(c(0.1, 5:100/100))) )
-}}}
-http://playwith.googlecode.com/files/screenshot_3-03_spinbutton.png
-
-== more parameters ==
-{{{
-## more parameters
-playwith(stripplot(yield ~ site, data = barley,
-    jitter=TRUE, type=c("p","a"),
-    aspect=aspect, groups=barley[[groups]],
-    scales=list(abbreviate=abbrev),
-    par.settings=list(plot.line=list(col=linecol))),
-  parameters = list(abbrev=FALSE, aspect=0.5,
-                    groups=c("none", "year", "variety"),
-                    linecol="red"))
-}}}
-http://playwith.googlecode.com/files/screenshot_2-02_parameters.png
-
-== simple spin and zoom for a 3D plot ==
-{{{
-## simple spin and zoom for a 3D plot
-playwith(wireframe(volcano, drape=TRUE))
-}}}
-http://playwith.googlecode.com/files/screenshot_1-05_3d.png
-
-== annotation dialog box ==
-This dialog box comes up when the user clicks on the plot to place
-an annotation. Note that you can click _Preview_ to draw the text,
-then change the settings and try again.
-
-http://playwith.googlecode.com/files/screenshot_1-06a_annotation.png
-
-== ggplot ==
-{{{
-## ggplot (NOTE: only qplot()-based calls will work)
-## labels come from data frame automatically
-library(ggplot2)
-playwith(qplot(qsec, wt, data=mtcars) + stat_smooth())
-}}}
-http://playwith.googlecode.com/files/screenshot_2-03_ggplot.png
-
-== brushing a multivariate scatterplot ==
-{{{
-## brushing a multivariate scatterplot
-playwith(splom(environmental))
-}}}
-http://playwith.googlecode.com/files/screenshot_1-04_brushing.png
-
-== a minimalist grid plot ==
-{{{
-## a minimalist grid plot
-gridPlot <- function(x, y, xlim = NULL, ylim = NULL) {
-	if (is.null(xlim)) xlim <- extendrange(x)
-	if (is.null(ylim)) ylim <- extendrange(y)
-	grid.newpage()
-	pushViewport(plotViewport())
-	grid.rect()
-	pushViewport(viewport(xscale=xlim, yscale=ylim,
-		name="theData"))
-	grid.points(x, y)
-	grid.xaxis()
-	grid.yaxis()
-	upViewport(0)
-}
-playwith(gridPlot(1:10, 11:20), viewport="theData")
-}}}
-http://playwith.googlecode.com/files/screenshot_1-06_grid.png
-
-== acting like a dialog box (confirm close) ==
-{{{
-## acting like a dialog box (confirm close)
-subTools <- list("identify", "clear", "zoom", "zoomout", "zoomfit")
-confirmClose <- function(playState) {
-	if (gWidgets::gconfirm("Close window and report IDs?")) {
-		cat("Indices of identified data points:\n")
-		print(playGetIDs(playState))
-		return(FALSE)
-	} else TRUE ## don't close
-}
-xy <- list(x=rnorm(20), y=rnorm(20))
-playwith(plot(xy), on.close=confirmClose, modal=TRUE, 
-	win.size=c(360, 360), show.call=FALSE, 
-	top=NULL, left=subTools)
-}}}
-http://playwith.googlecode.com/files/screenshot_1-07_onclose.png
+http://playwith.googlecode.com/files/exampleXYBase_01.png
 
 
-= see also ScreenshotsNewTools =
+
+= see also Features =
