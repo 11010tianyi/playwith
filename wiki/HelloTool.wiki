@@ -2,7 +2,7 @@
 
 = From `demo("helloTool")` =
 
-== "Hello world" ==
+== 1. "Hello world" ==
 {{{
 ## 1. A simple action to show a "Hello world" dialog box.
 
@@ -16,7 +16,7 @@ playwith(plot(1:10), tools = list(helloTool))
 }}}
    http://playwith.googlecode.com/files/demoHelloTool_01.png
 
-== "G'day universe" ==
+== 2. "G'day universe" ==
 {{{
 ## 2. A toggle button to draw "G'day universe" on the plot.
 
