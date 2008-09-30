@@ -9,15 +9,7 @@
 
 = Actions, Menus and Toolbars =
 
-http://playwith.googlecode.com/files/menuFile_01.png
-
-http://playwith.googlecode.com/files/menuView_01.png
-
-http://playwith.googlecode.com/files/menuStyle_01.png
-
-http://playwith.googlecode.com/files/menuLabels_01.png
-
-http://playwith.googlecode.com/files/menuTools_01.png
+http://playwith.googlecode.com/files/menuFile_01.png http://playwith.googlecode.com/files/menuView_01.png http://playwith.googlecode.com/files/menuStyle_01.png http://playwith.googlecode.com/files/menuLabels_01.png http://playwith.googlecode.com/files/menuTools_01.png
 
 
 = Default click actions =
