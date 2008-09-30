@@ -1,6 +1,6 @@
 #summary A demonstration of the use of Latticist.
 
-= from `example(latticist)` =
+= From `example(latticist)` =
 
 {{{
 ## CO2 dataset: see ?CO2
