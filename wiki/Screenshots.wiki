@@ -20,6 +20,7 @@ playwith(xyplot(Income ~ log(Population / Area),
 == Scatterplot (base graphics) ==
 {{{
 ## Scatterplot (base graphics); similar.
+## Note that label style can be set from a menu item.
 urbAss <- USArrests[,c("UrbanPop", "Assault")]
 playwith(plot(urbAss, panel.first = lines(lowess(urbAss)),
    col = "blue", main = "Assault vs urbanisation",
@@ -46,7 +47,6 @@ playwith(xyplot(sunspots ~ yearmon(time(sunspots)),
 {{{
 ## Time series plot (base graphics); similar.
 ## Custom labels are passed directly to playwith.
-## Note that label style can be set from a menu item.
 tt <- time(treering)
 treeyears <- paste(abs(tt) + (tt <= 0),
                   ifelse(tt > 0, "CE", "BCE"))
