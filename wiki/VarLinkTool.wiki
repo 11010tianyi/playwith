@@ -80,6 +80,6 @@ Clear those points and brush a new set, those with ozone concentration above 100
 
 http://playwith.googlecode.com/files/demoVarLinkToolD_01.png
 
-The original plot is updated automatically:
+The original plot is updated automatically; we can see that the high-ozone events all have high temperature and low wind.
 
 http://playwith.googlecode.com/files/demoVarLinkToolE_01.png
