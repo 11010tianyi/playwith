@@ -7,8 +7,7 @@
 {{{
 ## Scatterplot (Lattice graphics).
 ## Labels are taken from rownames of data.
-## Right-click on the plot to identify points,
-## or elsewhere for a general menu.
+## Right-click on the plot to identify points.
 playwith(xyplot(Income ~ log(Population / Area),
    data = data.frame(state.x77), groups = state.region,
    type = c("p", "smooth"), span = 1, auto.key = TRUE,
