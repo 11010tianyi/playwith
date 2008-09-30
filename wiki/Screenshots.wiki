@@ -203,13 +203,16 @@ doLocalStuff <- function(...) {
    ...)
 }
 doLocalStuff(title = "locals only") ## eval.args = NA is default
+}}}
+   http://playwith.googlecode.com/files/exampleEnv_01.png
+{{{
 ## List objects that have been copied and stored:
+## Note: if you rm(x_global) now, redraws will fail.
 ls(playDevCur()$env)
 }}}
   * `[1] "color"   "doRays"  "y_local"`
 
 {{{
-## i.e. if you rm(x_global) now, redraws will fail.
 ## Next: store all data objects (in a new window):
 doLocalStuff(title = "all stored", eval.args = TRUE, new = TRUE)
 sapply(playDevCur()$env, object.size)
