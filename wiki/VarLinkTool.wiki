@@ -62,8 +62,17 @@ playwith(xyplot(temperature ~ wind, data = environmental),
          tools = list(varLinkTool), click.mode = "Brush")
 }}}
 
-   http://playwith.googlecode.com/files/demoVarLinkToolA_01.png
-   http://playwith.googlecode.com/files/demoVarLinkToolB_01.png
-   http://playwith.googlecode.com/files/demoVarLinkToolC_01.png
-   http://playwith.googlecode.com/files/demoVarLinkToolD_01.png
-   http://playwith.googlecode.com/files/demoVarLinkToolE_01.png
+First, brush all points with wind above 15 miles per hour:
+http://playwith.googlecode.com/files/demoVarLinkToolA_01.png
+
+Now activate the `varLinkTool` and choose "ozone":
+http://playwith.googlecode.com/files/demoVarLinkToolB_01.png
+
+A new window comes up with the same data points highlighted:
+http://playwith.googlecode.com/files/demoVarLinkToolC_01.png
+
+Clear those points and brush a new set, those with ozone concentration above 100 parts per billion:
+http://playwith.googlecode.com/files/demoVarLinkToolD_01.png
+
+The original plot is updated automatically:
+http://playwith.googlecode.com/files/demoVarLinkToolE_01.png
