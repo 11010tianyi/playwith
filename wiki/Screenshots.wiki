@@ -32,6 +32,44 @@ playwith(plot(urbAss, panel.first = lines(lowess(urbAss)),
 }}}
 http://playwith.googlecode.com/files/exampleXYBase_01.png
 
+== Time series plot (Lattice) ==
+{{{
+## Time series plot (Lattice).
+## Date-time range can be entered directly in "time mode"
+## (supports numeric, Date, POSIXct, yearmon and yearqtr).
+## Click and drag to zoom in, holding Shift to constrain;
+## or use the scrollbar to move along the x-axis.
+library(zoo)
+playwith(xyplot(sunspots ~ yearmon(time(sunspots)),
+                xlim = c(1900, 1930), type = "l"),
+         time.mode = TRUE)
+}}}
+http://playwith.googlecode.com/files/exampleTs_01.png
+
+== Time series plot (base graphics) ==
+{{{
+## Time series plot (base graphics); similar.
+## Custom labels are passed directly to playwith.
+## Note that label style can be set from a menu item.
+tt <- time(treering)
+treeyears <- paste(abs(tt) + (tt <= 0),
+                  ifelse(tt > 0, "CE", "BCE"))
+playwith(plot(treering, xlim = c(1000, 1300)),
+   labels = treeyears, time.mode = TRUE)
+}}}
+http://playwith.googlecode.com/files/exampleTsBase_01.png
+
+== Multi-panel Lattice plot ==
+{{{
+## Multi-panel Lattice plot.
+## Need subscripts = TRUE to correctly identify points.
+## Scales are "same" so zooming applies to all panels.
+Depth <- equal.count(quakes$depth, number = 3, overlap = 0.1)
+playwith(xyplot(lat ~ long | Depth, data = quakes,
+      subscripts = TRUE, aspect = "iso", pch = ".", cex = 2),
+   labels = paste("mag", quakes$mag))
+}}}
+http://playwith.googlecode.com/files/examplePanels_01.png
 
 
 = see also Features =
