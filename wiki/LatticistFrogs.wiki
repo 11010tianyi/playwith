@@ -1,0 +1,1 @@
+#summary Demonstration of Latticist applied to 'frogs' dataset
