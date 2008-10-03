@@ -1,1 +1,1 @@
-#summary Demonstration of Latticist applied to 'audit' data
+#summary Demonstration of Latticist applied to 'audit' dataset
