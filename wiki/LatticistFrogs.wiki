@@ -1,1 +1,9 @@
 #summary Demonstration of Latticist applied to 'frogs' dataset
+
+The `frogs` dataset from the *DAAG* package. The data are on the distribution of the Southern Corroboree frog, which occurs in the Snowy Mountains area of New South Wales, Australia.
+
+{{{
+latticist(frogs)
+}}}
+
+http://playwith.googlecode.com/files/latticistFrogs_A_01.png
