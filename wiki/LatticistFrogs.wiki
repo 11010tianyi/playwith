@@ -7,3 +7,25 @@ latticist(frogs)
 }}}
 
 http://playwith.googlecode.com/files/latticistFrogs_A_01.png
+
+The initial display shows marginal distributions of all variables in the data frame. Lets begin by clicking "choose variables" and reducing the number of variables shown:
+
+http://playwith.googlecode.com/files/latticistFrogs_B_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_C_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_D_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_E_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_F_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_G_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_H_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_I_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_J_01.png
+
+http://playwith.googlecode.com/files/latticistFrogs_K_01.png
