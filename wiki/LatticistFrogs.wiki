@@ -20,7 +20,7 @@ Now, with a more manageable number of variables, set the "groups" to `pres.abs`,
 
 http://playwith.googlecode.com/files/latticistFrogs_C_01.png
 
-This reveals relationships with distance, number of sites, and temperature (looks like the frogs find it too cold below 2 degrees C).
+This reveals relationships with distance, number of sites, and temperature (maybe the frogs find it too cold below 2 degrees C).
 
 http://playwith.googlecode.com/files/latticistFrogs_D_01.png
 
@@ -32,7 +32,7 @@ To view the spatial distribution of observations, set the x and y variables to "
 
 http://playwith.googlecode.com/files/latticistFrogs_F_01.png
 
-The lines are from a _loess_ smoother, which treats the y variable as a function of the x variable; that is not appropriate in this case, so remove them by clicking the "Lines" checkbox. Also set the "Aspect" option to "iso", since x and y are in the same units.
+The lines here come from a _loess_ smoother, which treats the y variable as a function of the x variable; that is not appropriate in this case, so remove them by clicking the "Lines" checkbox. Also set the "Aspect" option to "iso", because x and y are in the same units.
 
 http://playwith.googlecode.com/files/latticistFrogs_G_02.png
 
