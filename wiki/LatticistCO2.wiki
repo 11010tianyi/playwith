@@ -1,0 +1,12 @@
+= From `example(latticist)` =
+
+{{{
+## CO2 dataset: see ?CO2
+## From an experiment on the cold tolerance of a grass species.
+## Try: uptake ~ conc
+##      uptake ~ conc | Plant
+##      uptake ~ conc | Type, groups = Treatment
+latticist(CO2)
+}}}
+
+http://playwith.googlecode.com/files/latticistCO2_A_01.png
