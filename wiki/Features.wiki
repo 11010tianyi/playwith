@@ -1,4 +1,5 @@
 #summary The built-in feature set.
+#labels Featured
 
 = Introduction =
 
