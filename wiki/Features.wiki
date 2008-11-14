@@ -7,22 +7,25 @@
 <wiki:toc />
 
 
-= Actions (Menus and Toolbars) =
+= Actions =
+
+== Menus ==
 
 || http://playwith.googlecode.com/files/menuFile_02.png || http://playwith.googlecode.com/files/menuView_02.png || http://playwith.googlecode.com/files/menuLabels_02.png || http://playwith.googlecode.com/files/menuTheme_02.png ||
 || http://playwith.googlecode.com/files/menuStyle_02.png || http://playwith.googlecode.com/files/menuTools_02.png || http://playwith.googlecode.com/files/menuOptions_02.png || http://playwith.googlecode.com/files/menuHelp_02.png ||
 
-== Click/drag modes ==
+== Toolbar: click/drag modes ==
 
 http://playwith.googlecode.com/files/dialogClickModeToolbar_02.png
 
-= Built-in Tools =
+
+= Dialogs =
 
 == Add annotation to the plot ==
 
 http://playwith.googlecode.com/files/dialogAnnotation_02.png
 
-== Plot Settings
+== Plot Settings ==
 
 === Basic plot settings ===
 
@@ -32,7 +35,7 @@ http://playwith.googlecode.com/files/dialogPlotSettingsBasics_02.png
 
 http://playwith.googlecode.com/files/dialogPlotSettingsScales_02.png
 
-= Style Settings =
+== Style Settings ==
 
 
 = API =
