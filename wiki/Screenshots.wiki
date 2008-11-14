@@ -1,9 +1,9 @@
-#summary What the examples look like.
+#summary What the examples look like -- from help("playwith").
 #labels Featured
 
-= Examples from `help(playwith)` =
+<wiki:toc />
 
-== Scatterplot (Lattice graphics) ==
+= Scatterplot (Lattice graphics) =
 {{{
 ## Scatterplot (Lattice graphics).
 ## Labels are taken from rownames of data.
@@ -16,7 +16,7 @@ playwith(xyplot(Income ~ log(Population / Area),
 }}}
    http://playwith.googlecode.com/files/exampleXY_01.png   http://playwith.googlecode.com/files/exampleContext_01.png
 
-== Scatterplot (base graphics) ==
+= Scatterplot (base graphics) =
 {{{
 ## Scatterplot (base graphics); similar.
 ## Note that label style can be set from a menu item.
@@ -28,7 +28,7 @@ playwith(plot(urbAss, panel.first = lines(lowess(urbAss)),
 }}}
    http://playwith.googlecode.com/files/exampleXYBase_01.png
 
-== Time series plot (Lattice) ==
+= Time series plot (Lattice) =
 {{{
 ## Time series plot (Lattice).
 ## Date-time range can be entered directly in "time mode"
@@ -42,7 +42,7 @@ playwith(xyplot(sunspots ~ yearmon(time(sunspots)),
 }}}
    http://playwith.googlecode.com/files/exampleTs_01.png
 
-== Time series plot (base graphics) ==
+= Time series plot (base graphics) =
 {{{
 ## Time series plot (base graphics); similar.
 ## Custom labels are passed directly to playwith.
@@ -54,7 +54,7 @@ playwith(plot(treering, xlim = c(1000, 1300)),
 }}}
    http://playwith.googlecode.com/files/exampleTsBase_01.png
 
-== Multi-panel Lattice plot ==
+= Multi-panel Lattice plot =
 {{{
 ## Multi-panel Lattice plot.
 ## Need subscripts = TRUE to correctly identify points.
@@ -68,7 +68,7 @@ playwith(xyplot(lat ~ long | Depth, data = quakes,
 }}}
    http://playwith.googlecode.com/files/examplePanels_02.png   http://playwith.googlecode.com/files/examplePanelsExpand_01.png
 
-== Spin and brush for a 3D Lattice plot ==
+= Spin and brush for a 3D Lattice plot =
 {{{
 ## Spin and zoom for a 3D Lattice plot.
 ## Drag on the plot to rotate in 3D (can be confusing).
@@ -85,7 +85,7 @@ playSetIDs(value = which(quakes$mag >= 6))
 }}}
    http://playwith.googlecode.com/files/example3DLinkSetIDs_01.png
 
-== Interactive control of a parameter with a slider ==
+= Interactive control of a parameter with a slider =
 {{{
 ## Interactive control of a parameter with a slider.
 xx <- rnorm(50)
@@ -94,7 +94,7 @@ playwith(plot(density(xx, bw = bandwidth), panel.last = rug(xx)),
 }}}
    http://playwith.googlecode.com/files/exampleSlider_01.png
 
-== More parameters ==
+= More parameters =
 {{{
 ## More parameters (logical, numeric, text).
 playwith(stripplot(yield ~ site, data = barley,
@@ -108,7 +108,7 @@ playwith(stripplot(yield ~ site, data = barley,
 }}}
    http://playwith.googlecode.com/files/exampleParameters_01.png
 
-== Composite plot (base graphics) ==
+= Composite plot (base graphics) =
 {{{
 ## Composite plot (base graphics).
 ## Adapted from an example in help("legend").
@@ -131,7 +131,7 @@ playwith( {
 }}}
    http://playwith.googlecode.com/files/exampleCompositeBase_01.png
 
-== A ggplot example ==
+= A ggplot example =
 {{{
 ## A ggplot example.
 ## NOTE: only qplot()-based calls will work.
@@ -141,7 +141,7 @@ playwith(qplot(qsec, wt, data = mtcars) + stat_smooth())
 }}}
    http://playwith.googlecode.com/files/exampleGgplot_01.png
 
-== A minimalist grid plot ==
+= A minimalist grid plot =
 {{{
 ## A minimalist grid plot.
 ## This shows how to get playwith to work with custom plots:
@@ -164,7 +164,7 @@ playwith(myGridPlot(1:10, 11:20, pch = 17), viewport = "theData")
 }}}
    http://playwith.googlecode.com/files/exampleGrid_01.png
 
-== Presenting the window as a modal dialog box ==
+= Presenting the window as a modal dialog box =
 {{{
 ## Presenting the window as a modal dialog box.
 ## When the window is closed, ask user to confirm.
@@ -185,7 +185,7 @@ playwith(xyplot(y ~ x, xy, main = "Select points, then close"),
 }}}
    http://playwith.googlecode.com/files/exampleOnClose_01.png
 
-== Cached objects / multiple devices ==
+= Cached objects / multiple devices =
 {{{
 ## Demonstrate cacheing of objects in local environment.
 ## By default, only local variables in the plot call are stored.
@@ -238,4 +238,6 @@ playDevCur()
 }}}
   * `<playState: locals only>`
 
-= see also `demo(package = "playwith")` =
+=see also=
+
+`demo(package = "playwith")`
