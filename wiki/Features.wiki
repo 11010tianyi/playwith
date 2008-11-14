@@ -7,14 +7,13 @@
 
 = Actions, Menus and Toolbars =
 
-http://playwith.googlecode.com/files/menuFile_02.png http://playwith.googlecode.com/files/menuView_02.png http://playwith.googlecode.com/files/menuStyle_02.png http://playwith.googlecode.com/files/menuTheme_02.png http://playwith.googlecode.com/files/menuLabels_02.png http://playwith.googlecode.com/files/menuTools_02.png http://playwith.googlecode.com/files/menuOptions_02.png http://playwith.googlecode.com/files/menuHelp_02.png
+|| http://playwith.googlecode.com/files/menuFile_02.png || http://playwith.googlecode.com/files/menuView_02.png || http://playwith.googlecode.com/files/menuLabels_02.png || http://playwith.googlecode.com/files/menuTheme_02.png ||
+|| http://playwith.googlecode.com/files/menuStyle_02.png || http://playwith.googlecode.com/files/menuTools_02.png || http://playwith.googlecode.com/files/menuOptions_02.png || http://playwith.googlecode.com/files/menuHelp_02.png ||
 
 
 = Default click actions =
 
-Right-click popup menu:
-
-http://playwith.googlecode.com/files/menuContext_02.png
+_screenshot of click mode tools_
 
 
 = Built-in Tools =
