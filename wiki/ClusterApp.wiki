@@ -5,8 +5,9 @@
 {{{
 clusterApp <- function(data, ...)
 {
-    param <- list()
+    dataName <- toString(deparse(substitute(data)), 30)
 
+    param <- list()
     param$cut.tree <-
         list(function(playState) {
             foo <- playPointInput(playState)
@@ -34,7 +35,7 @@ clusterApp <- function(data, ...)
              label = "Clustering method")
     param$dist.method <-
         list(c("euclidean", "maximum", "manhattan",
-               "canberra", "binary", "minkowski"),
+               "canberra", "binary"),
              label = "Distance method")
 
     param$parallel <-
@@ -43,6 +44,7 @@ clusterApp <- function(data, ...)
             playwith(parallel(refObj$env$data,
                          groups = refObj$env$clusters,
                          main = "Parallel Coordinates plot"),
+                     title = "Parallel plot",
                      new = TRUE,
                      link.to = playState)
         }, label = "Parallel")
@@ -53,6 +55,7 @@ clusterApp <- function(data, ...)
             playwith(marginal.plot(refObj$env$data,
                          groups = refObj$env$clusters,
                          main = "Marginal distributions"),
+                     main = "Marginal distributions",
                      new = TRUE,
                      link.to = playState)
         }, label = "Marginals")
@@ -64,7 +67,8 @@ clusterApp <- function(data, ...)
                 mds <- with(refObj$env,
                             cmdscale(dist(data, method = dist.method)))
                 plot(mds, main = "Classical Multidimensional Scaling")
-                text(mds, rownames(mds))},
+                text(mds, rownames(mds), cex = 0.7)},
+                     title = "MDS plot",
                      new = TRUE,
                      update.actions = function(playState)
                          drawClusterPoints(playState, refObj),
@@ -104,6 +108,7 @@ clusterApp <- function(data, ...)
 
     playwith(plot(hclust(dist(data, method = dist.method),
                          method = clust.method), hang = -1, cex = 0.7),
+             title = paste("Cluster App:", dataName),
              parameters = param,
              update.actions = list(computeClusters, drawClusterPoints),
              click.mode = "Brush",
