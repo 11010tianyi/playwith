@@ -3,6 +3,14 @@
 = From `demo("clusterApp")` =
 
 {{{
+require(latticeExtra)
+
+## A mini application (a playwith toolbar) for clustering.
+## Clustering method and distance method can be chosen.
+## The "Cut Tree" button allows clusters to be defined.
+## Buttons open linked plots (marginal distibutions,
+## parallel plot, or MDS plot) showing clusters.
+
 clusterApp <- function(data, ...)
 {
     dataName <- toString(deparse(substitute(data)), 30)
