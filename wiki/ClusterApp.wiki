@@ -133,8 +133,8 @@ http://playwith.googlecode.com/files/demoClusterAppD_01.png
 These appear in the parallel coordinates plot too: (identified by colours)
 http://playwith.googlecode.com/files/demoClusterAppE_01.png
 
-... the same clusters can be visualised in terms of the marginal distributions of variables:
+The same clusters can be visualised in terms of the marginal distributions of variables...
 http://playwith.googlecode.com/files/demoClusterAppF_01.png
 
-... or on a multidimensional scaling plot:
+... or on a plot of a multidimensional scaling (using the same distance calculations as the clustering method):
 http://playwith.googlecode.com/files/demoClusterAppG_01.png
