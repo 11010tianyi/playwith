@@ -117,3 +117,17 @@ clusterApp <- function(data, ...)
 
 clusterApp(USArrests)
 }}}
+
+http://playwith.googlecode.com/files/demoClusterAppA_01.png
+
+http://playwith.googlecode.com/files/demoClusterAppB_01.png
+
+http://playwith.googlecode.com/files/demoClusterAppC_01.png
+
+http://playwith.googlecode.com/files/demoClusterAppD_01.png
+
+http://playwith.googlecode.com/files/demoClusterAppE_01.png
+
+http://playwith.googlecode.com/files/demoClusterAppF_01.png
+
+http://playwith.googlecode.com/files/demoClusterAppG_01.png
