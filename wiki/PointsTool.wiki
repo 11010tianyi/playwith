@@ -14,7 +14,7 @@ points_handler <- function(widget, playState) {
                               "Right-click to stop."))
         if (is.null(foo)) return()
         xy <- xyData(playState)
-        if (foo$modifiers & GdkModifierType["mod1-mask"]) {
+        if (foo$modifiers & RGtk2::GdkModifierType["mod1-mask"]) {
             ## alt-click: delete data points
             xy$x[foo$which] <- NA
             xy$y[foo$which] <- NA
