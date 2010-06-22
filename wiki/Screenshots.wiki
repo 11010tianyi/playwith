@@ -14,7 +14,7 @@ playwith(xyplot(Income ~ log(Population / Area),
    xlab = "Population density, 1974 (log scale)",
    ylab = "Income per capita, 1974"))
 }}}
-   http://playwith.googlecode.com/files/exampleXY_01.png   http://playwith.googlecode.com/files/exampleContext_01.png
+   http://playwith.googlecode.com/files/exampleXY_01.png   http://playwith.googlecode.com/files/exampleContext_02.png
 
 = Scatterplot (base graphics) =
 {{{
